@@ -68,5 +68,9 @@
   },
   "resolutions": {
     "graceful-fs": "^4.2.4"
+  },
+  "dependencies": {
+    "chartist": "^0.11.4",
+    "swiper": "^7.3.1"
   }
 }

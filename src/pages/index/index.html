@@ -1,1 +1,38 @@
-{% block content %} {% endblock %}
+{% extends "src/html/layouts/_layout.html" %} {% set page = 'home' %}{% block
+content %}
+<div class="wrapper">
+  <div class="wrapper wrapper_column">
+    {% include Header %}
+    <main class="main">
+      <nav class="nav">
+        <div class="nav__wrapper">
+          {{ button(modifired="", id="home", text="Dashboard",link="link-home")
+          }} {{ button(modifired="", id="union",
+          text="Upcoming",link="link-union") }} {{ button(modifired="",
+          id="compass", text="Explore",link="link-compass") }} {{
+          button(modifired="", id="person", text="Profile",link="link-person")
+          }} {{ button(modifired="", id="settings",
+          text="Settings",link="link-settings") }}
+        </div>
+        {{ button(modifired="", id="power", text="Logout",link="link-power") }}
+      </nav>
+      <section class="section">
+        <div class="swiper-comp__header">
+          <h2 class="swiper-comp__title">
+            <span> {{ svg('swiper__compass') }}</span>
+            Explore
+          </h2>
+          <div class="swiper-comp__pagination">
+            <div class="swiper-button-next swiper-left"></div>
+            <div class="swiper-button-prev swiper-right"></div>
+          </div>
+        </div>
+        <div class="section__wrapper">
+          {% include Swiper %} {% include Invite %} {% include Chart %}
+        </div>
+      </section>
+    </main>
+  </div>
+  {% include Aside %}
+</div>
+{% include bigSwiper%} {% endblock %}

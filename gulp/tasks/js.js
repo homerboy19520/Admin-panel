@@ -18,10 +18,6 @@ gulp.task('js', function() {
         path.resolve('src')
       ]
     }))
-    .pipe(removeEmptyLines({
-      removeComments: true
-    }))
-    .pipe(strip())
     .pipe(plumber({
       errorHandler: config.errorHandler
     }))

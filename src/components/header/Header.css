@@ -1,0 +1,184 @@
+.header {
+  width: 100%;
+  background-color: #f6f7fb;
+  display: flex;
+  flex-direction: row;
+  height: fit-content;
+
+  &__box {
+    height: 113px;
+    width: 131px;
+  }
+
+  &__button-nav {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: #f0f2f8;
+    @add-mixin flex center, center, row;
+    transition: background-color 0.2s ease-out;
+
+    &_open {
+      background-color: #3a3d46;
+
+      .header__icon {
+        background-color: #fff;
+
+        &::after,
+        &::before {
+          background-color: #fff;
+        }
+
+        &::before {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  &__icon {
+    position: relative;
+    width: 18px;
+    height: 2px;
+    background-color: $black;
+    transition: background-color 0.2s ease-out, width 0.2s ease-out;
+
+    &::after,
+    &::before {
+      transition: background-color 0.2s ease-out, width 0.2s ease-out;
+      position: absolute;
+      left: 0;
+      top: 0;
+      content: "";
+      width: 100%;
+      height: 100%;
+      transform: translate(0, -7px);
+      background-color: $black;
+    }
+
+    &::before {
+      transform: translate(0, 7px);
+      width: 50%;
+    }
+  }
+
+  &__title {
+    font-family: "Gilroy", Arial, Helvetica, sans-serif;
+    @add-mixin font 26px, 600, 30px, $black;
+  }
+
+  &__wrapper {
+    @add-mixin flex space-between, center, row;
+    padding: 28px 44px;
+    flex-grow: 1;
+  }
+
+  &__nav-box {
+    @add-mixin flex space-between, center, row;
+    gap: 10px;
+    width: fit-content;
+  }
+
+  &__input-box {
+    position: relative;
+    width: fit-content;
+  }
+
+  &__input {
+    position: relative;
+    box-sizing: border-box;
+    border: 2px solid transparent;
+    width: 326px;
+    height: 52px;
+    padding: 17px 47px;
+    border-radius: 57px;
+    overflow: visible;
+    @add-mixin font 14px, 400, 20px, #222222;
+    transition: border-radius 0.2s ease-out, background-color 0.2s ease-out,
+      color 0.2s ease-out, border-color 0.2s ease-out, box-shadow 0.2s ease-out;
+
+    &::after {
+      position: absolute;
+      content: "";
+      left: 0;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &::placeholder {
+      padding: 0;
+      margin: 0;
+      width: fit-content;
+      @add-mixin font 15px, 400, 20px, $greyText;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:focus::placeholder {
+      color: $black;
+      font-size: 0;
+    }
+
+    &:hover {
+      border-radius: 10px;
+      box-shadow: 0px 9px 20px 0px rgba(41, 36, 25, 0.23);
+    }
+
+    &_eror {
+      animation: error 0.4s 1 ease;
+      background-color: #fff3f1;
+      color: red;
+      border-color: red;
+
+      &::placeholder {
+        color: red;
+      }
+    }
+
+    &_valid {
+      background-color: #71d171;
+      color: #fff;
+      border-color: #71d171;
+
+      &::placeholder {
+        color: #fff;
+      }
+    }
+  }
+
+  &__button-search {
+    width: fit-content;
+    cursor: pointer;
+  }
+
+  &__button {
+    position: relative;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background-color: $orange;
+  }
+}
+
+.svg-header-search {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(13px, -50%);
+  width: 24px;
+  height: 24px;
+  fill: #000;
+}
+
+.svg-header-tune,
+.svg-header-burger {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  fill: #fff;
+}

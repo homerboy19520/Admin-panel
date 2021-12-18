@@ -1,8 +1,3 @@
 body {
-  font-family: "Roboto", "Open Sans", "Helvetica Neue", sans-serif;
-}
-
-img {
-  user-select: none;
-  pointer-events: none;
+  margin: 0;
 }

@@ -1,0 +1,276 @@
+.aside {
+  display: flex;
+  justify-content: center;
+  max-width: 400px;
+  width: 0;
+  transition: width 0.2s ease-out, left 0.2s ease-out, transform 0.2s ease-out;
+  background-color: #f3f3f3;
+  overflow: hidden;
+
+  &_open {
+    width: 400px;
+    overflow: hidden;
+  }
+
+  @media (max-width: 1390px) {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    z-index: 1;
+
+    &_open {
+      left: 100%;
+      transform: translate(-100%, 0);
+    }
+  }
+
+  span {
+    display: block;
+  }
+
+  &__width {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 362px;
+    min-width: 362px;
+    padding: 20px 0 20px 0;
+    width: 100%;
+    background-color: #f3f3f3;
+    overflow: hidden;
+  }
+
+  &__swiper-next,
+  &__swiper-prev {
+    position: absolute;
+    z-index: 2;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #c4c4c4;
+    top: 50%;
+    transform: translate(0, -50%);
+    cursor: pointer;
+  }
+
+  &__swiper-prev {
+    left: 14px;
+  }
+
+  &__swiper-next {
+    right: 14px;
+    transform: translate(0, -50%);
+  }
+
+  &__swiper-next .svg-aside-chevron {
+    transform: translate(-50%, -50%) rotate(180deg);
+  }
+
+  &__title {
+    font-family: "Sofia", Arial, Helvetica, sans-serif;
+    @add-mixin font 20px, 400, 31px, $black;
+    margin-bottom: 27px;
+  }
+
+  &__wrapper {
+    @add-mixin flex space-between, center, row;
+    margin-bottom: 25px;
+  }
+
+  &__apartment {
+    font-family: "Sofia", Arial, Helvetica, sans-serif;
+    @add-mixin font 16px, 400, 25px, #757575;
+  }
+
+  &__label {
+    width: fit-content;
+    height: 16px;
+    cursor: pointer;
+  }
+
+  &__input {
+    display: none;
+  }
+
+  &__box {
+    position: relative;
+    @add-mixin flex flex-start, center, row;
+    gap: 10px;
+    margin-bottom: 27px;
+  }
+
+  &__button {
+    @add-mixin flex center, center, row;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #ffffff;
+    box-shadow: -4px 14px 24px rgba(0, 0, 0, 0.06);
+    transition: box-shadow 0.2s ease-out;
+    cursor: pointer;
+
+    &:hover {
+      box-shadow: -4px 14px 24px 15px rgb(0 0 0 / 6%);
+    }
+  }
+
+  &__price {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+    font-family: "Sofia", Arial, Helvetica, sans-serif;
+    @add-mixin font 20px, 700, 31px, #3246d3;
+  }
+
+  &__container {
+    @add-mixin flex space-between, center, row;
+    margin-bottom: 45px;
+  }
+  &__container span {
+    font-family: "Sofia", Arial, Helvetica, sans-serif;
+    @add-mixin font 16px, 400, 25px, #757575;
+  }
+
+  &__map {
+    height: 122px;
+    width: 100%;
+    border-radius: 20px;
+    margin-bottom: 33px;
+  }
+
+  &__map iframe {
+    border-radius: 20px;
+    width: 100%;
+    height: 122px;
+  }
+}
+
+.photos {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  &__box {
+    @add-mixin flex space-between, center, row;
+  }
+
+  h5 {
+    margin: 0;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  &__container {
+    width: 112px;
+    height: 112px;
+  }
+  &__container img {
+    scursor: pointer;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.svg-aside-chevron {
+  fill: #fff;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 8px;
+  fill: #fff;
+}
+
+.aside .swiper-slide {
+  background-color: #f5f5f7;
+  width: 100%;
+  height: 100%;
+}
+
+.svg-aside-heart {
+  width: 18px;
+  height: 16px;
+  fill: #3246d3;
+}
+
+.svg-aside-list {
+  width: 14px;
+  height: 14px;
+  fill: #757575;
+}
+.svg-aside-loading {
+  width: 18px;
+  height: 18px;
+  fill: #757575;
+}
+.svg-aside-telegram {
+  width: 100%;
+  height: 100%;
+  fill: #757575;
+}
+
+.svg-aside-bed {
+  width: 22px;
+  height: 16px;
+  fill: #757575;
+}
+
+.svg-aside-comparsion {
+  width: 18px;
+  height: 18px;
+  fill: #757575;
+}
+
+.svg-aside-property {
+  width: 20px;
+  height: 16px;
+  fill: #757575;
+}
+
+.mySwiper3 {
+  position: relative;
+  overflow: hidden;
+  height: 210px;
+  min-height: 210px;
+  width: 100%;
+  border-radius: 20px;
+  margin-bottom: 27px;
+}
+
+.mySwiper3 .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mySwiper3 .swiper-slide {
+  padding: 0;
+}
+
+.thumbs .swiper-wrapper {
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 363px;
+  gap: 10px;
+}
+.thumbs .swiper-slide img {
+  display: block;
+  height: 112px;
+  width: 112px;
+  object-fit: cover;
+}
+
+.thumbs .swiper-slide {
+  height: fit-content;
+  height: 112px !important;
+  width: 112px !important;
+  display: block;
+  object-fit: cover;
+}

@@ -1,2 +1,2 @@
 //= require components/**/*.js
-//= require elements/**/*.js
+//= require pages/**/*.js
