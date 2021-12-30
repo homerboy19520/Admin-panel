@@ -1,13 +1,24 @@
+.body {
+  min-width: 375px;
+
+  &_hidden {
+    overflow: hidden;
+  }
+}
 .section {
   position: relative;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  gap: 280px;
+  gap: 300px;
   padding: 54px 32px;
 
   @media (max-width: 1000px) {
     height: fit-content;
+  }
+
+  @media (max-width: 410px) {
+    padding: 24px 16px;
   }
 
   &__wrapper {
@@ -30,17 +41,66 @@
   padding: 56px 0 34px 0;
   transition: width 0.2s ease-out;
   width: 0;
+  position: relative;
 
   @media (max-width: 1000px) {
-    height: 100vh;
+    height: calc(100vh - 86px);
   }
-  &__wrapper {
-    @add-mixin flex center, center, column;
+
+  @media (max-height: 800px) {
     gap: 30px;
+  }
+
+  @media (max-width: 740px) {
+    height: calc(100vh - 74px);
+  }
+
+  @media (max-width: 500px) {
+    position: absolute;
+    z-index: 3;
+  }
+
+  @media (max-width: 410px) {
+    height: calc(100vh - 40px);
   }
 
   &_open {
     width: 131px;
+    position: relative;
+
+    @media (max-width: 1000px) {
+      width: 100px;
+    }
+
+    @media (max-width: 740px) {
+      width: 74px;
+    }
+
+    @media (max-width: 410px) {
+      width: 64px;
+    }
+  }
+  &__wrapper {
+    @add-mixin flex center, center, column;
+    gap: 30px;
+
+    @media (max-width: 500px) {
+      gap: 16px;
+    }
+  }
+
+  &__box {
+    position: absolute;
+    bottom: 34px;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+}
+
+.main {
+  background: rgb(247 247 247);
+  @media (max-width: 500px) {
+    position: relative;
   }
 }
 
@@ -62,6 +122,11 @@
     flex-grow: 1;
     height: 100%;
   }
+
+  @media (max-width: 474px) {
+    overflow: hidden;
+    height: 100%;
+  }
 }
 
 .main {
@@ -72,4 +137,26 @@
   @media (max-width: 1000px) {
     height: fit-content;
   }
+}
+
+.swiper-comp__pagination {
+  width: 100px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  background-image: url("../icons/swiper__chevron.svg");
+  background-repeat: no-repeat;
+  background-size: 60% auto;
+  background-position: center;
+  z-index: 1;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  display: none;
+}
+
+.swiper-button-prev {
+  transform: rotate(180deg);
 }

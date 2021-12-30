@@ -4,9 +4,17 @@
   left: 0;
   width: 100%;
 
+  @media (max-width: 410px) {
+    top: 80px;
+  }
+
   &__header {
     @add-mixin flex space-between, center, row;
     padding: 0 0 52px 0;
+
+    @media (max-width: 410px) {
+      padding-bottom: 30px;
+    }
   }
 
   &__title {
@@ -43,6 +51,10 @@
     left: -70px;
     transform: rotate(-90deg) translate(30px, 0);
     @add-mixin flex space-between, center, row;
+
+    @media (max-width: 410px) {
+      z-index: 2;
+    }
   }
 
   &__input {
@@ -62,7 +74,7 @@
       position: absolute;
       transform: rotate(90deg) translate(14px, -14px);
       opacity: 0;
-      bottom: 0;
+      bottom: 21px;
       right: 50%;
       content: "";
       background-image: url("../images/swiper__nav.svg");
@@ -70,6 +82,20 @@
       height: 124px;
       background-repeat: no-repeat;
       transition: opacity 0.2s ease-out;
+    }
+
+    &:active {
+      opacity: 0.5;
+    }
+
+    &_active::after {
+      opacity: 1;
+    }
+
+    &_active {
+      .swiper-comp__link {
+        color: $orange;
+      }
     }
   }
 
@@ -83,6 +109,7 @@
     cursor: pointer;
     @add-mixin font 14px, 600, 18px, #adadb4;
     transition: color 0.2s ease-out;
+    padding: 20px;
 
     &:hover {
       color: $orange;
@@ -93,45 +120,78 @@
     padding-left: 85px;
     width: 100%;
     padding-right: 31px;
+
+    & .swiper {
+      display: none;
+
+      &_active {
+        display: block;
+      }
+    }
+
+    @media (max-width: 410px) {
+      padding: 0;
+    }
   }
 
-  .mySwiper {
+  .mySwiper-europe,
+  .mySwiper-sights,
+  .mySwiper-america {
     width: 100%;
     margin: 0 auto 0 0;
   }
+
+  .svg-swiper__nav {
+    position: absolute;
+    left: -8px;
+    width: 30px;
+    height: 121px;
+    fill: #ff6647;
+  }
+
+  .swiper-slide {
+    padding-bottom: 52px;
+    width: fit-content;
+    height: fit-content;
+  }
+
+  .swiper-slide_open {
+    animation-name: open;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+  }
+
+  .swiper-slide_hidden {
+    animation-name: hidden;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+  }
 }
 
-.swiper-comp__pagination {
-  width: 100px;
+@keyframes open {
+  from {
+    opacity: 1;
+    bottom: 0;
+  }
+
+  to {
+    opacity: 0;
+    bottom: 100px;
+  }
 }
 
-.swiper-button-next,
-.swiper-button-prev {
-  background-image: url("../icons/swiper__chevron.svg");
-  background-repeat: no-repeat;
-  background-size: 60% auto;
-  background-position: center;
-}
+@keyframes hidden {
+  from {
+    opacity: 0;
+    bottom: 100px;
+  }
 
-.swiper-button-next::after,
-.swiper-button-prev::after {
-  display: none;
-}
-
-.swiper-button-prev {
-  transform: rotate(180deg);
-}
-
-.svg-swiper__nav {
-  position: absolute;
-  left: -8px;
-  width: 30px;
-  height: 121px;
-  fill: #ff6647;
-}
-
-.swiper-slide {
-  padding-bottom: 52px;
-  width: fit-content;
-  height: fit-content;
+  to {
+    opacity: 1;
+    bottom: 0;
+  }
 }

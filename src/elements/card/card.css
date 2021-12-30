@@ -5,34 +5,53 @@
   width: 294px;
   min-height: 260px;
   padding: 12px 12px 20px 12px;
-  box-shadow: 0px 0px 80px rgba(153, 165, 236, 0.05),
-    0px 64.8148px 46.8519px rgba(153, 165, 236, 0.037963),
-    0px 38.5185px 25.4815px rgba(153, 165, 236, 0.0303704),
-    0px 20px 13px rgba(153, 165, 236, 0.025),
-    0px 8.14815px 6.51852px rgba(153, 165, 236, 0.0196296),
-    0px 1.85185px 3.14815px rgba(153, 165, 236, 0.012037);
   border-radius: 25px;
   background-color: #fff;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease-out;
+
+  &:hover {
+    box-shadow: 0px 0px 80px rgba(153, 165, 236, 0.05),
+      0px 64.8148px 46.8519px rgba(153, 165, 236, 0.037963),
+      0px 38.5185px 25.4815px rgba(153, 165, 236, 0.0303704),
+      0px 20px 13px rgba(153, 165, 236, 0.025),
+      0px 8.14815px 6.51852px rgba(153, 165, 236, 0.0196296),
+      0px 1.85185px 3.14815px rgba(153, 165, 236, 0.012037);
+
+    .card__img {
+      width: 110%;
+      height: 110%;
+    }
+  }
+
+  @media (max-width: 410px) {
+    margin: 0 16px 0 auto;
+  }
 
   &__box {
     position: relative;
     width: 268px;
     height: 170px;
+    border-radius: 20px;
+    overflow: hidden;
   }
 
   &__img {
-    border-radius: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: height 0.2s ease-out, width 0.2s ease-out;
   }
 
   &__icon {
     position: absolute;
-    transform: translate(0, 50%);
-    bottom: 0;
-    right: 0;
+    transform: translate(210px, 150px);
     width: 38px;
     height: 38px;
     border-radius: 50%;
     background-color: #fff;
+    box-shadow: 0px 4.2069px 4.2069px rgba(255, 102, 71, 0.25);
 
     &::before {
       position: absolute;

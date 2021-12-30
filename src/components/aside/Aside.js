@@ -3,7 +3,7 @@ var thumbs = new Swiper(".thumbs", {
   allowTouchMove: false,
 });
 
-var mySwiper3 = new Swiper(".mySwiper3 ", {
+var mySwiper3 = new Swiper(".mySwiper4 ", {
   spaceBetween: 18,
   navigation: {
     nextEl: ".aside__swiper-next",

@@ -6,6 +6,9 @@
   @media (max-width: 1000px) {
     width: 100%;
   }
+  @media (max-width: 740px) {
+    width: 80%;
+  }
 
   &__header {
     width: 100%;
@@ -46,7 +49,19 @@
     row-gap: 18px;
 
     @media (max-width: 1000px) {
-      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+
+    @media (max-width: 740px) {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    @media (max-width: 600px) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @media (max-width: 500px) {
+      grid-template-columns: 1fr 1fr 1fr;
     }
   }
 }

@@ -23,10 +23,33 @@ var options = {
 
 var responsiveOptions = [
   [
-    "screen and (min-width: 700px) and (max-width: 1000px)",
+    "screen and (max-width: 701px) and screen",
     {
-      width: 650,
+      width: 450,
       height: 250,
+    },
+  ],
+
+  [
+    "screen and (min-width: 501px) and (max-width: 1000px)",
+    {
+      width: 580,
+      height: 300,
+    },
+  ],
+
+  [
+    "screen and (min-width: 570px) and (max-width: 701px)",
+    {
+      width: 500,
+      height: 200,
+    },
+  ],
+  [
+    "screen and (max-width: 571px)",
+    {
+      width: 330,
+      height: 200,
     },
   ],
 ];
