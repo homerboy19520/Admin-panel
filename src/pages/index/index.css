@@ -98,7 +98,6 @@
 }
 
 .main {
-  background: rgb(247 247 247);
   @media (max-width: 500px) {
     position: relative;
   }
@@ -114,13 +113,15 @@
 .wrapper {
   display: flex;
   flex-direction: row;
-  height: 100vh;
+  height: 100%;
   position: relative;
+  min-height: 984px;
 
   &_column {
     flex-direction: column;
     flex-grow: 1;
     height: 100%;
+    background: rgb(247 247 247);
   }
 
   @media (max-width: 474px) {
