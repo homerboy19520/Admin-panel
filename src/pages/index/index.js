@@ -16,6 +16,8 @@ const closeButtonAside = document.querySelector(".aside__button-close");
 
 const bigWrapper = document.querySelector(".wrapper_column");
 
+const closeWrapper = document.querySelector(".container");
+
 arrSpoilerSlides.forEach((item) => {
   item.addEventListener("click", () => {
     modalWindow.classList.toggle("modal-content_open");
@@ -27,12 +29,18 @@ modalButton.addEventListener("click", () => {
   console.log("work");
 });
 
+closeWrapper.addEventListener("click", () => {
+  acide.classList.remove("aside_open");
+  closeWrapper.classList.remove("container_open");
+});
+
 swiperChildren.forEach((item) => {
   let cards = item.querySelectorAll(".swiper-slide");
   cards.forEach((item) => {
     item.addEventListener("click", () => {
-      acide.classList.toggle("aside_open");
-      closeButtonAside.classList.toggle("aside__button-close_open");
+      acide.classList.add("aside_open");
+      closeButtonAside.classList.remove("aside__button-close_open");
+      closeWrapper.classList.add("container_open");
     });
   });
 });
