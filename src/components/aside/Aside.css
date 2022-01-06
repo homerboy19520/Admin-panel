@@ -22,6 +22,7 @@
   &_open {
     width: 400px;
     overflow: hidden;
+    z-index: 2;
 
     @media (max-width: 474px) {
       width: 100%;

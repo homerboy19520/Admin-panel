@@ -103,6 +103,11 @@
   height: 1em;
   fill: #9BAAD3;
 }
+.svg-swiper-chevron-small {
+  width: 1em;
+  height: 1em;
+  fill: #000;
+}
 .svg-swiper__chevron {
   width: 0.5em;
   height: 1em;

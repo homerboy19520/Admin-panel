@@ -30,6 +30,23 @@
       gap: 50px;
     }
   }
+
+  & .swiper-comp__pagination {
+    width: 70px;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    top: 0;
+  }
+
+  .swiper-button-next {
+    right: 0;
+  }
+
+  .swiper-button-prev {
+    left: 0;
+  }
 }
 
 .nav {
@@ -141,7 +158,7 @@
   width: 100%;
   height: 100%;
   display: none;
-  z-index: 999;
+  z-index: 1;
 
   &_open {
     display: block;
