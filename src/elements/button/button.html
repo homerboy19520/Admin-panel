@@ -1,0 +1,13 @@
+{% from '../svg/svg.html' import svg %} {% macro button(modifired="", id="",
+text="", link="") %}
+<label>
+<div class="button {{modifired}}">
+  <a class="button__link">
+    <input class="button__input" type="radio" name="button" id="{{id}}" />
+    <label class="button__label button__label_button" for="{{id}}">{{svg( link )}}</label>
+  </a>
+
+  <p class="button__text">{{text}}</p>
+</div>
+</label class="button__label" for="{{id}}">
+{% endmacro %}

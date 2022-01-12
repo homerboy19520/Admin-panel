@@ -1,0 +1,197 @@
+.swiper-comp {
+  position: absolute;
+  top: 118px;
+  left: 0;
+  width: 100%;
+
+  @media (max-width: 410px) {
+    top: 80px;
+  }
+
+  &__header {
+    @add-mixin flex space-between, center, row;
+    padding: 0 0 52px 0;
+
+    @media (max-width: 410px) {
+      padding-bottom: 30px;
+    }
+  }
+
+  &__title {
+    position: relative;
+    font-family: "Gilroy", Arial, Helvetica, sans-serif;
+    @add-mixin font 20px, 600, 24px, #646272;
+    padding-left: 24px;
+
+    & span {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      left: 0;
+      top: 50%;
+      transform: translate(0, -50%);
+    }
+  }
+
+  &__pagination {
+    position: relative;
+  }
+
+  &__main {
+    flex-grow: 1;
+    margin: 0 auto;
+    position: relative;
+    @add-mixin flex space-between, center, row;
+  }
+
+  &__nav {
+    position: absolute;
+    top: 50%;
+    width: 234px;
+    left: -70px;
+    transform: rotate(-90deg) translate(30px, 0);
+    @add-mixin flex space-between, center, row;
+
+    @media (max-width: 410px) {
+      z-index: 2;
+    }
+  }
+
+  &__input {
+    &:checked + & {
+      display: none;
+    }
+  }
+
+  &__box {
+    position: relative;
+
+    &:hover::after {
+      opacity: 1;
+    }
+
+    &::after {
+      position: absolute;
+      transform: rotate(90deg) translate(14px, -14px);
+      opacity: 0;
+      bottom: 21px;
+      right: 50%;
+      content: "";
+      background-image: url("../images/swiper__nav.svg");
+      width: 16px;
+      height: 124px;
+      background-repeat: no-repeat;
+      transition: opacity 0.2s ease-out;
+    }
+
+    &:active {
+      opacity: 0.5;
+    }
+
+    &_active::after {
+      opacity: 1;
+    }
+
+    &_active {
+      .swiper-comp__link {
+        color: $orange;
+      }
+    }
+  }
+
+  &__label {
+    cursor: pointer;
+  }
+
+  &__link {
+    display: block;
+    font-family: "Gilroy", Arial, Helvetica, sans-serif;
+    cursor: pointer;
+    @add-mixin font 14px, 600, 18px, #adadb4;
+    transition: color 0.2s ease-out;
+    padding: 20px;
+
+    &:hover {
+      color: $orange;
+    }
+  }
+
+  &__container {
+    padding-left: 85px;
+    width: 100%;
+    padding-right: 31px;
+
+    & .swiper {
+      display: none;
+
+      &_active {
+        display: block;
+      }
+    }
+
+    @media (max-width: 410px) {
+      padding: 0;
+    }
+  }
+
+  .mySwiper-europe,
+  .mySwiper-sights,
+  .mySwiper-america {
+    width: 100%;
+    margin: 0 auto 0 0;
+  }
+
+  .svg-swiper__nav {
+    position: absolute;
+    left: -8px;
+    width: 30px;
+    height: 121px;
+    fill: #ff6647;
+  }
+
+  .swiper-slide {
+    padding-bottom: 52px;
+    width: fit-content;
+    height: fit-content;
+  }
+
+  .swiper-slide_open {
+    animation-name: open;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+  }
+
+  .swiper-slide_hidden {
+    animation-name: hidden;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+  }
+}
+
+@keyframes open {
+  from {
+    opacity: 1;
+    bottom: 0;
+  }
+
+  to {
+    opacity: 0;
+    bottom: 100px;
+  }
+}
+
+@keyframes hidden {
+  from {
+    opacity: 0;
+    bottom: 100px;
+  }
+
+  to {
+    opacity: 1;
+    bottom: 0;
+  }
+}

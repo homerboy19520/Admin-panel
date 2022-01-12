@@ -1,0 +1,174 @@
+.user {
+  position: relative;
+  width: 99px;
+  padding: 15px 24px 35px 24px;
+  border-radius: 14px;
+  @add-mixin flex center, center, column;
+  gap: 7px;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease-out;
+
+  &:hover {
+    box-shadow: 0px 0px 80px rgb(153 165 236 / 5%),
+      0px 64.8148px 46.8519px rgb(153 165 236 / 4%),
+      0px 38.5185px 25.4815px rgb(153 165 236 / 3%),
+      0px 20px 13px rgb(153 165 236 / 3%),
+      0px 8.14815px 6.51852px rgb(153 165 236 / 2%),
+      0px 1.85185px 3.14815px rgb(153 165 236 / 1%);
+  }
+
+  &_nate {
+    background-color: #ecfaff;
+
+    .user__button {
+      background-color: #b5d9e7;
+      border: 2px solid #ffffff;
+    }
+
+    &:hover {
+      .user__button {
+        background-color: #ffffff;
+        border-color: #b5d9e7;
+
+        .svg-ivite__close {
+          fill: #b5d9e7;
+        }
+      }
+    }
+  }
+
+  &_jim {
+    background-color: #ffefbc;
+
+    .user__button {
+      background-color: #ffefbc;
+      border: 2px solid #ffffff;
+    }
+
+    &:hover {
+      .user__button {
+        background-color: #ffffff;
+        border-color: #ffefbc;
+
+        .svg-ivite__close {
+          fill: #ffefbc;
+        }
+      }
+    }
+  }
+  &_angela {
+    background-color: #ffe2bf;
+
+    .user__button {
+      background-color: #ffe2bf;
+      border: 2px solid #ffffff;
+    }
+
+    &:hover {
+      .user__button {
+        background-color: #ffffff;
+        border-color: #ffe2bf;
+      }
+
+      .svg-ivite__close {
+        fill: #ffe2bf;
+      }
+    }
+  }
+  &_bhaaji {
+    background-color: #eeecff;
+    .user__button {
+      background-color: #eeecff;
+      border: 2px solid #ffffff;
+    }
+
+    &:hover {
+      .user__button {
+        background-color: #ffffff;
+        border-color: #eeecff;
+      }
+      .svg-ivite__close {
+        fill: #eeecff;
+      }
+    }
+  }
+  &_billo {
+    background-color: #ffe8e8;
+    .user__button {
+      background-color: #ffe8e8;
+      border: 2px solid #ffffff;
+    }
+    &:hover {
+      .user__button {
+        background-color: #ffffff;
+        border-color: #ffe8e8;
+      }
+      .svg-ivite__close {
+        fill: #ffe8e8;
+      }
+    }
+  }
+  &_alex {
+    background-color: #ddffe9;
+    .user__button {
+      background-color: #ddffe9;
+      border: 2px solid #ffffff;
+    }
+    &:hover {
+      .user__button {
+        background-color: #ffffff;
+        border-color: #ddffe9;
+      }
+      .svg-ivite__close {
+        fill: #ddffe9;
+      }
+    }
+  }
+
+  &__wrapper {
+    @add-mixin flex center, center, row;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: 1px solid #ffffff;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 15px rgba(160, 230, 255, 0.2);
+  }
+  &__title {
+    font-family: "Gilroy", Arial, Helvetica, sans-serif;
+    @add-mixin font 12px, 600, 14px, $dark;
+    letter-spacing: 0.01em;
+    text-align: center;
+  }
+
+  &__button {
+    @add-mixin flex center, center, column;
+    position: absolute;
+    border-radius: 50%;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 24px;
+    height: 24px;
+    background-color: #b5d9e7;
+    border: 2px solid #ffffff;
+    box-sizing: border-box;
+    transition: background-color 0.2s ease-out, border-color 0.2s ease-out;
+
+    &:hover {
+      background-color: #ffffff;
+      border-color: #b5d9e7;
+
+      .svg-ivite__close {
+        fill: #b5d9e7;
+      }
+    }
+  }
+}
+
+.svg-ivite__close {
+  width: 10px;
+  height: 10px;
+  fill: #fff;
+  transition: fill 0.2s ease-out;
+}

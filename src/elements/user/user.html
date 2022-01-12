@@ -1,0 +1,10 @@
+{% from '../svg/svg.html' import svg %} {% macro user(modifired="", name="",
+link="", img="") %}
+<div class="user {{modifired}}">
+  <div class="user__wrapper">
+    <img src="{{img}}" width="28px" height="28px" />
+  </div>
+  <h5 class="user__title">{{name}}</h5>
+  <button class="user__button">{{svg("ivite__close")}}</button>
+</div>
+{% endmacro %}
